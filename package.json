@@ -1,0 +1,33 @@
+{
+  "name": "markojs-poc",
+  "version": "1.0.0",
+  "description": "Contains a markojs poc to demonstrate an error",
+  "main": "index.js",
+  "keywords": [
+    "Test",
+    "markoJS"
+  ],
+  "author": "Philipp Reinert <p.reinert@reytech.de>",
+  "license": "ISC",
+  "scripts": {
+    "start:dev": "webpack-dev-server"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.0",
+    "@babel/plugin-transform-runtime": "^7.5.0",
+    "@babel/preset-env": "^7.5.0",
+    "@babel/register": "^7.4.4",
+    "@babel/runtime": "^7.5.1",
+    "@marko/webpack": "^1.2.0",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.7.2"
+  },
+  "dependencies": {
+    "marko": "^4.18.7"
+  }
+}

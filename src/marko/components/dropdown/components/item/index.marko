@@ -1,0 +1,20 @@
+class {
+  onCreate(input, out) {
+    this.state = {
+      value: input.value,
+      text: input.text,
+      selected: input.selected,
+    };
+  }
+
+  onInput(input, out) {
+    this.state = {
+      value: input.value,
+      text: input.text,
+      selected: input.selected,
+    };
+  }
+}
+
+$ const isSelected = state.selected === true;
+<option value=state.value selected=isSelected>${state.text}</option>

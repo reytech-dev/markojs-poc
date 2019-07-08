@@ -1,0 +1,57 @@
+import form from '../app-form'
+
+class {
+  onCreate(input, out) {
+    this.state = {
+      items: []
+    };
+  }
+
+  showList() {
+    form
+      .renderSync({
+        items: this.getSelect(),
+        name: "select"
+      })
+      .replaceChildrenOf(this.getEl("form"));
+  }
+
+  getSelect() {
+    return [
+      {
+        type: "select",
+        name: "countryCode",
+        label: "Countrycode",
+        options: [
+          {
+            value: 49,
+            text: "DE",
+            selected: false
+          },
+          {
+            value: 49,
+            text: "DE",
+            selected: false
+          },
+          {
+            value: 49,
+            text: "DE",
+            selected: false
+          },
+          {
+            value: 49,
+            text: "DE",
+            selected: false
+          }
+        ],
+        validationMessage: "Please select your country code",
+        required: true,
+        classGroup: "text-center"
+      }
+    ];
+  }
+}
+
+<h1>Lorem ipsum</h1>
+<button on-click("showList")>Show List</button>
+<div key="form"/>

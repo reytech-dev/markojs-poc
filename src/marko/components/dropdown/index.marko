@@ -1,0 +1,51 @@
+class {
+  onCreate(input, out) {
+    this.state = {
+      options: input.options,
+      name: input.name,
+      selected: -1,
+      label: input.label,
+      class: input.class,
+      validationMessage: input.validationMessage,
+      required: input.required,
+      classGroup: input.classGroup
+    };
+  }
+
+  onMount() {
+    this.getEl("dropdown").selectedIndex = this.state.selected;
+  }
+
+  onInput(input, out) {
+    this.state.options = input.options;
+  }
+
+  onChange(event, target) {
+    this.emit("change", event, target);
+  }
+}
+
+<div class=`form-group ${state.classGroup}`>
+  <label for:scoped="dropdown">${state.label}</label>
+  <if(state.required)>
+    <select class=`form-control ${state.class}` id:scoped="dropdown" name=state.name key="dropdown" onChange("onChange") required>
+      <for|option, index| of=state.options>
+        <if(option.selected)>
+          $ component.state.selected = index;
+        </if>
+        <item ...option key=index/>
+      </for>
+    </select>
+  </if>
+  <else>
+    <select class=`form-control ${state.class}` id:scoped="dropdown" name=state.name key="dropdown" onChange("onChange")>
+      <for|option, index| of=state.options>
+        <if(option.selected)>
+          $ component.state.selected = index;
+        </if>
+        <item ...option key=index/>
+      </for>
+    </select>
+  </else>
+  <div class="invalid-feedback">${state.validationMessage}</div>
+</div>

@@ -1,0 +1,16 @@
+class {
+  onCreate(input, out) {
+    this.state = {
+      items: input.items,
+      name: input.name
+    };
+  }
+}
+
+<form name=state.name key="form" class="needs-validation" novalidate>
+  <for|item| of=state.items>
+    <if(item.type === "select")>
+      <dropdown key=item.name ...item/>
+    </if>
+  </for>
+</form>
