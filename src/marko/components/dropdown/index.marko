@@ -33,7 +33,7 @@ class {
         <if(option.selected)>
           $ component.state.selected = index;
         </if>
-        <item ...option key=index/>
+        <item ...option key=`${index}-item`/>
       </for>
     </select>
   </if>
@@ -43,7 +43,7 @@ class {
         <if(option.selected)>
           $ component.state.selected = index;
         </if>
-        <item ...option key=index/>
+        <item ...option key=`${index}-item`/>
       </for>
     </select>
   </else>
